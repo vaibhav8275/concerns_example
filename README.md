@@ -13,6 +13,32 @@ Some Example areas where concerns are useful.
 
 more..............
 
+# How to run above app?
+
+download or clone above example
+
+    bundle install
+    bundle exec rake db:migrate
+    rails c
+
+# create some products
+    Product.create(:name => 'Pen', :cost => 20, :quantity_in_stock => 10,:quantity_on_order => 2)
+    Product.create(:name => 'Book', :cost => 100, :quantity_in_stock => 20,:quantity_on_order => 10)
+    Product.create(:name => 'Bag', :cost => 200, :quantity_in_stock => 30,:quantity_on_order => 30,:status =>'out_of_stock')
+
+
+# Class methods
+    Prodcut.in_stock
+    Product.out_of_stock
+    Product.not_out_of_stock
+
+# Instance Methods
+    Product.last.status_in_stock?
+    Product.first.status_in_stock?
+    Product.last.status_out_of_stock?
+
+# More Example and some explanation about code
+
 # app/models/product.rb
     class Product 
       include Taggable
